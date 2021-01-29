@@ -1,13 +1,14 @@
 ---
 title: Awesome kitties
-date: 2021-01-29
+date: 2019-03-17T19:31:20.591Z
 cats:
-    - description: 'Maru is a Scottish Fold from Japan.'
-    name: Maru 
-    - description: 'Lil Bub is another cat from America'
+  - description: 'Maru is a Scottish Fold from Japan, and he loves boxes.'
+    name: Maru (まる)
+  - description: Lil Bub is an American celebrity cat known for her unique appearance.
     name: Lil Bub
-    - description: 'Grumpy Cat is a celeb'
-    name: Grumpy Cat
+  - description: 'Grumpy cat is an American celebrity cat known for her grumpy appearance.'
+    name: Grumpy cat (Tardar Sauce)
+  - description: 'Tom is a chonk, part horse, part bear'
+    name: Tom
 ---
-
-Welcome to my awesome page about cats
+Welcome to my awesome page about cats of the internet.
