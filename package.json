@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
+    "fs": "0.0.1-security",
     "next": "^10.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
