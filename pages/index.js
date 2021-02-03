@@ -2,6 +2,8 @@ import Head from "next/head"
 import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md';
 import Link from 'next/link'
+import fs from 'fs';
+
 
 export default class Home extends Component {
   render() {
@@ -13,7 +15,17 @@ export default class Home extends Component {
         </Head>
         <article>
           <h1>{title}</h1>
-          <Link href="/test-one"><a>Test-One</a></Link>
+          <ul>
+
+          {this.props.slugs.map(slug => {
+            return (
+              <li key={slug}>
+
+                <Link href={slug}><a>{slug}</a></Link>
+              </li>
+            )
+          })}
+          </ul>
           <HomeContent />
           <ul>
             {cats.map((cat, k) => (
@@ -26,5 +38,15 @@ export default class Home extends Component {
         </article>
       </>
     )
+  }
+}
+
+export const getStaticProps = async () => {
+  const files = fs.readdirSync('_posts/blog')
+
+  return {
+    props: {
+      slugs: files.map(filename => filename.replace(".md", ""))
+    }
   }
 }
