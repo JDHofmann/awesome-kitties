@@ -2,12 +2,13 @@ import React from 'react'
 import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter'
+import marked from 'marked'
 
-const Post = ({content, title}) => {
+const Post = ({htmlString, title}) => {
     return (
         <div>
             <h1>{title}</h1>
-            {content}
+            <div dangerouslySetInnerHTML={{__html: htmlString}} />
         </div>
     )
 }
@@ -34,11 +35,13 @@ export const getStaticProps =  async ({params: {post}}) => {
 
     const parsedMarkdown = matter(markdowWithMetaData)
 
+    const htmlString = marked(parsedMarkdown.content)
+
     // console.log(parsedMarkdown.data)
 
     return {
         props: {
-            content: parsedMarkdown.content,
+            htmlString,
             title: parsedMarkdown.data.title
         }
     }
